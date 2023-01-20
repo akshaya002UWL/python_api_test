@@ -222,7 +222,7 @@ def update_JDAndComp():
     if request.method == 'POST':
         input_data = request.get_json()
         key = next(iter(input_data))
-        input_josn = input_data[key]
+        input_josn = input_data[key][0]
         print(input_josn)
         hiringManager = request.args.get("HiringManager").replace('%20', ' ')
         recruiter = request.args.get("Recruiter").replace('%20', ' ')
