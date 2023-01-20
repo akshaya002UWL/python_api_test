@@ -534,6 +534,7 @@ def get_all_job_requisitions():
                 # jrs_response_json = jsonify(jrs_response)
                 response = {}
                 response['instances'] = jrs_response
+                print("response - else " + str(jrs_response))
                 print("response - else " + str(response))
                 return response
             else:
