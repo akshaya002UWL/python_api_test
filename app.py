@@ -224,10 +224,14 @@ def update_JDAndComp():
         key = next(iter(input_data))
         input_josn = input_data[key][0]
         print(input_josn)
-        hiringManager = request.args.get("HiringManager").replace('%20', ' ')
-        recruiter = request.args.get("Recruiter").replace('%20', ' ')
-        input_josn['hiringManager'] = hiringManager
-        input_josn['recruiter'] = recruiter
+        hiringManager = request.args.get("HiringManager")
+        recruiter = request.args.get("Recruiter")
+        if hiringManager is not None :
+            hiringManager = hiringManager.replace('%20', '')
+            input_josn['hiringManager'] = hiringManager
+        if recruiter is not None :
+            recruiter = recruiter.replace('%20', '')
+            input_josn['recruiter'] = recruiter
         print("request.args.get(HiringManager) == " + hiringManager)
         print("request.args.get(Recruiter) == " + recruiter)
 
