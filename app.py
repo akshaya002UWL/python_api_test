@@ -221,6 +221,7 @@ def getJRId():
 def update_JDAndComp():
     if request.method == 'POST':
         input_data = request.get_json()
+        print(input_data)
         key = next(iter(input_data))
         input_josn = input_data[key][0]
         print(input_josn)
