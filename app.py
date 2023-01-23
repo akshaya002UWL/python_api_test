@@ -226,7 +226,7 @@ def update_JDAndComp():
         print(input_josn)
         hiringManager = request.args.get("HiringManager")
         recruiter = request.args.get("Recruiter")
-       if hiringManager is not None :
+        if hiringManager is not None :
             hiringManager = hiringManager.replace('%20', '')
             input_josn['hiringManager'] = hiringManager
             print("request.args.get(HiringManager) == " + hiringManager)
