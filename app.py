@@ -226,14 +226,14 @@ def update_JDAndComp():
         print(input_josn)
         hiringManager = request.args.get("HiringManager")
         recruiter = request.args.get("Recruiter")
-        if hiringManager is not None :
+       if hiringManager is not None :
             hiringManager = hiringManager.replace('%20', '')
             input_josn['hiringManager'] = hiringManager
+            print("request.args.get(HiringManager) == " + hiringManager)
         if recruiter is not None :
             recruiter = recruiter.replace('%20', '')
             input_josn['recruiter'] = recruiter
-        print("request.args.get(HiringManager) == " + hiringManager)
-        print("request.args.get(Recruiter) == " + recruiter)
+            print("request.args.get(Recruiter) == " + recruiter)
 
         #Job_Requisition = input_josn['Job_Requisition']
         #Job_Requisition = mongo.db.WORecruitmentFlow.find_one( {"jobReqId": jobReqId},{"_id": 0} );
