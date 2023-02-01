@@ -564,7 +564,8 @@ data = {
 
 @app.get('/getDummyData')
 def get_dummy_data():
-  time.sleep(35)
+  delay = request.args.get("delay") or 35
+  time.sleep(int(delay))
   return data
 
 
