@@ -11,6 +11,7 @@ from flask_pymongo import PyMongo
 from enum import Enum
 import threading
 import json
+import time
 
 
 
@@ -552,7 +553,20 @@ def get_all_job_requisitions():
             response = {"errorCode": "ER101",
                         "errorMessage": e}
             return response
-    
+ 
+data = {
+  "dataseries": [
+   { "channelDescription": "Monster" },
+   { "channelDescription": "Indeed" },
+   { "channelDescription": "Dice" }
+  ]
+ }
+
+@app.get('/getDummyData')
+def get_dummy_data():
+  time.sleep(35)
+  return data
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True, port=8080)
