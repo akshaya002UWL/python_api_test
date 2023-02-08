@@ -562,6 +562,29 @@ data = {
   ]
  }
 
+@app.route('/getJobReqByJID', methods=['GET'])
+def getJobReqByJID():
+    if request.method == 'GET':
+        response = {}
+        jr_id = request.args.get('jobReqId')
+        can = mongo.db.WORecruitmentFlow.find({"jobReqId":jr_id}, {'_id': False})
+        Job_Requisitions = list(can)
+        response['Job_Requisition'] =  next((el for el in Job_Requisitions if el is not None), {})
+        return response
+
+@app.route('/updateLocation', methods=['POST'])
+def updateLocation():
+    if request.method == 'POST':
+        inputJson = request.get_json();
+        Job_Requisition = inputJson['Job_Requisition'];
+        print(Job_Requisition)
+        mongo.db.WORecruitmentFlow.update_one({"jobReqId": Job_Requisition['jobReqId']}, {"$set": Job_Requisition});
+        Job_Requisition_JSON = {"Job_Requisition": Job_Requisition}
+        print(Job_Requisition_JSON)
+        json_dumps = json.dumps(Job_Requisition_JSON, default=str)
+        response = json.loads(json_dumps)
+        return response;
+
 @app.get('/getDummyData')
 def get_dummy_data():
   delay = request.args.get("delay") or 35
