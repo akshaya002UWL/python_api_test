@@ -593,7 +593,7 @@ def get_dummy_data():
 
 @app.get('/getDropDownData')
 def getDropDownData():
-  data = ["open","closed","unapproved","approved","unassigned","assigned","test1","test2"]
+  data = ["open","closed","unapproved","approved","unassigned","assigned"]
   return data
 
 
