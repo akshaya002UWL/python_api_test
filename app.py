@@ -591,6 +591,11 @@ def get_dummy_data():
   time.sleep(int(delay))
   return data
 
+@app.get('/getDropDownData')
+def getDropDownData():
+  data = ["test","test1","test2","test3","test4","test5","test6","test7","test8","test9","test10"]
+  return data
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True, port=8080)
