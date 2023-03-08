@@ -556,7 +556,7 @@ def get_all_job_requisitions():
  
 data = {
   "dataseries": [
-   { "channelDescription": "Monster" },
+   { "channelDescription": '<a href="https://www.w3schools.com" target="_blank">Visit W3Schools</a>' },
    { "channelDescription": "Indeed" },
    { "channelDescription": "Dice" }
   ]
