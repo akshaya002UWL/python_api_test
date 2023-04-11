@@ -596,7 +596,7 @@ def getDropDownData():
   data = ["open","closed","unapproved","approved","unassigned","assigned"]
   return data
 
-@app.route('/textResponse', methods=['GET'])
+@app.route('/test', methods=['GET'])
 def textResponse():
     if request.method == 'GET':
         return ({"output":{"jr":123}})
