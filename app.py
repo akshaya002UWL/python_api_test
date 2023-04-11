@@ -596,11 +596,11 @@ def getDropDownData():
   data = ["open","closed","unapproved","approved","unassigned","assigned"]
   return data
 
-@app.route('/test', methods=['GET'])
+@app.route('/textResponse', methods=['GET'])
 def textResponse():
-   if request.method == 'GET':
-      text = "Successful response"
-      return (text);
+    if request.method == 'GET':
+        return ({"output":{"jr":123}})
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True, port=8080)
