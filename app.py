@@ -601,6 +601,10 @@ def textResponse():
     if request.method == 'GET':
         return ({"output":{"jr":123}})
 
+@app.route('/output_test', methods=['GET'])
+def output_test():
+    if request.method == 'GET':
+        return ({"output":[{"jr":123}]},{"response":[{"jr":123}]})
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True, port=8080)
