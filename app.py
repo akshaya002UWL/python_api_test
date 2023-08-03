@@ -604,7 +604,9 @@ def textResponse():
 @app.route('/output_test', methods=['GET'])
 def output_test():
     if request.method == 'GET':
-        return ({"output": [{"jr": 123}]}, {"response": [{"name": "abc", "status": "success"}]})
+        output_array = [{"jr": 123}]
+        response_array = [{"name": "abc", "status": "success"}]
+        return jsonify({"output": output_array, "response": response_array})
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True, port=8080)
